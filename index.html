@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Outlive365</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg bg-a"></div>
+    <div class="bg bg-b"></div>
+
+    <header class="topbar">
+      <div class="brand">
+        <span class="mark">O365</span>
+        <div>
+          <p class="name">Outlive365</p>
+          <p class="sub">Daily Healthspan Operating System</p>
+        </div>
+      </div>
+      <button id="logoutBtn" class="btn ghost hidden">Log out</button>
+    </header>
+
+    <main class="shell">
+      <section id="landingView" class="panel view">
+        <p class="eyebrow">Science to behavior, every day</p>
+        <h1>Turn longevity research into habits you can sustain 365 days a year.</h1>
+        <p>Get your top 3 priorities, complete your daily check-in in under 30 seconds, and track consistency over time.</p>
+        <div class="row">
+          <button id="startBtn" class="btn primary">Get Started</button>
+          <button id="demoBtn" class="btn secondary">Use Demo Data</button>
+        </div>
+      </section>
+
+      <section id="authView" class="panel view hidden">
+        <h2>Create account</h2>
+        <p class="muted">MVP prototype uses local auth for testing.</p>
+        <form id="authForm" class="grid two">
+          <label>Email<input id="email" type="email" required placeholder="you@example.com" /></label>
+          <label>Password<input id="password" type="password" minlength="6" required /></label>
+          <button class="btn primary" type="submit">Continue</button>
+        </form>
+      </section>
+
+      <section id="assessmentView" class="panel view hidden">
+        <h2>Longevity Assessment</h2>
+        <p class="muted">~10 minute onboarding. Used to generate your top priorities.</p>
+        <form id="assessmentForm" class="grid two">
+          <label>Age<input id="age" type="number" min="18" max="90" required /></label>
+          <label>Sex<select id="sex" required><option value="">Select</option><option>Female</option><option>Male</option><option>Other</option></select></label>
+          <label>Weekly activity<select id="activity" required><option value="">Select</option><option value="low">0-1 sessions</option><option value="moderate">2-4 sessions</option><option value="high">5+ sessions</option></select></label>
+          <label>Pushups (max set)<input id="pushups" type="number" min="0" max="100" required /></label>
+          <label>Dead hang (seconds)<input id="hang" type="number" min="0" max="240" required /></label>
+          <label>Average sleep (hours)<input id="sleep" type="number" min="3" max="12" step="0.1" required /></label>
+          <label>Waist circumference (inches)<input id="waist" type="number" min="20" max="70" step="0.1" required /></label>
+          <label>Family history<select id="family" required><option value="">Select</option><option value="none">None known</option><option value="cardio">Cardiovascular disease</option><option value="metabolic">Diabetes/metabolic disease</option><option value="neuro">Neurodegenerative disease</option></select></label>
+          <label>Optional fasting glucose (mg/dL)<input id="glucose" type="number" min="60" max="220" /></label>
+          <label>Optional resting heart rate<input id="rhr" type="number" min="35" max="120" /></label>
+          <button class="btn primary" type="submit">Generate Priorities</button>
+        </form>
+      </section>
+
+      <section id="prioritiesView" class="panel view hidden">
+        <h2>Your Top 3 Longevity Priorities</h2>
+        <p class="muted">Mapped to practical daily actions.</p>
+        <div id="priorityCards" class="stack"></div>
+        <button id="openDashboardBtn" class="btn primary">Open Daily Dashboard</button>
+      </section>
+
+      <section id="dashboardView" class="view hidden">
+        <section class="panel metrics">
+          <article><p class="label">7-Day Adherence</p><p id="weeklyScore" class="value">0%</p></article>
+          <article><p class="label">Current Streak</p><p id="streakScore" class="value">0 days</p></article>
+          <article><p class="label">30-Day Consistency</p><p id="monthlyScore" class="value">0%</p></article>
+        </section>
+
+        <section class="panel">
+          <div class="row between">
+            <h2>Daily Check-In</h2>
+            <label class="datepick">Date<input id="activeDate" type="date" /></label>
+          </div>
+          <p class="muted">Target: complete in under 30 seconds.</p>
+          <div id="habitList" class="stack"></div>
+        </section>
+
+        <section class="panel">
+          <h2>Healthspan Consistency Score</h2>
+          <p id="consistencySummary" class="summary">Your last 30 days are 0% aligned with your longevity protocol.</p>
+          <div id="pillarGrid" class="pillars"></div>
+        </section>
+      </section>
+    </main>
+
+    <dialog id="scienceDialog" class="dialog">
+      <article>
+        <h3 id="scienceTitle"></h3>
+        <p id="scienceWhy"></p>
+        <p><strong>Biomarkers:</strong> <span id="scienceBiomarkers"></span></p>
+        <p><strong>Evidence:</strong> <span id="scienceBadge" class="badge"></span></p>
+        <button id="closeScience" class="btn secondary">Close</button>
+      </article>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>

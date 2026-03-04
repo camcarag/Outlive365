@@ -1,0 +1,302 @@
+:root {
+  --bg: #08111a;
+  --panel: #111f2c;
+  --panel-2: #172a3b;
+  --text: #eff8ff;
+  --muted: #9db1c3;
+  --accent: #5ae6af;
+  --accent-2: #f6c56d;
+  --line: #274056;
+  --danger: #ff6d6d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: "Instrument Sans", sans-serif;
+  background: radial-gradient(1200px 700px at 20% 0%, #10243a, #08111a 55%);
+}
+
+h1,
+h2,
+h3,
+.name,
+.mark {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.bg {
+  position: fixed;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.bg-a {
+  top: -80px;
+  right: -80px;
+  background: #1b4f7a;
+}
+
+.bg-b {
+  bottom: -120px;
+  left: -80px;
+  background: #135b4f;
+}
+
+.topbar {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mark {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #3dc8b2, #2f6bb2);
+  font-weight: 700;
+}
+
+.name,
+.sub,
+.eyebrow,
+p {
+  margin: 0;
+}
+
+.sub {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.shell {
+  max-width: 1024px;
+  margin: 8px auto 40px;
+  padding: 0 16px;
+  display: grid;
+  gap: 16px;
+}
+
+.panel {
+  background: linear-gradient(160deg, rgba(23, 42, 59, 0.94), rgba(13, 25, 37, 0.96));
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.24);
+}
+
+.view h1 {
+  font-size: clamp(1.6rem, 4vw, 2.3rem);
+  margin: 8px 0;
+}
+
+.eyebrow {
+  color: var(--accent-2);
+  text-transform: uppercase;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.between {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary {
+  background: linear-gradient(120deg, #44c9a2, #3c8bd1);
+  color: #02111f;
+}
+
+.secondary {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--line);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--muted);
+  border-color: var(--line);
+}
+
+.grid {
+  display: grid;
+  gap: 12px;
+}
+
+.two {
+  grid-template-columns: 1fr;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  font-size: 0.92rem;
+}
+
+input,
+select {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: #0f1b28;
+  color: var(--text);
+  padding: 10px;
+  font: inherit;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.stack {
+  display: grid;
+  gap: 10px;
+}
+
+.priority,
+.habit,
+.pillar {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px;
+  background: rgba(9, 21, 33, 0.75);
+}
+
+.priority h3,
+.habit h3 {
+  margin: 0 0 6px;
+}
+
+.priority p,
+.habit p,
+.summary {
+  color: var(--muted);
+}
+
+.habit {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.habit-left {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.link-btn {
+  border: 0;
+  background: none;
+  color: #7bc8ff;
+  font-weight: 600;
+  padding: 0;
+  cursor: pointer;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 12px;
+}
+
+.label {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.value {
+  margin-top: 4px;
+  font-size: 1.45rem;
+  font-weight: 700;
+}
+
+.datepick {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+}
+
+.datepick input {
+  width: auto;
+}
+
+.pillars {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.badge {
+  display: inline-block;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  padding: 4px 8px;
+}
+
+.dialog {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #0d1b2b;
+  color: var(--text);
+  max-width: 520px;
+}
+
+.dialog::backdrop {
+  background: rgba(4, 8, 14, 0.75);
+}
+
+@media (min-width: 760px) {
+  .two {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .metrics {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pillars {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
